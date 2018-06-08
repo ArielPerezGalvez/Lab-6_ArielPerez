@@ -5,17 +5,23 @@
  */
 package lab6_arielperez;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 /**
  *
  * @author ariel
  */
-public class Lab6_ArielPerez {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+public class usuario {
+    private String correo;
+    private String contra;
+    private Date fecha;
+    ArrayList <Peliculas> lista = new ArrayList();
     
-}
+
+
+
+    
+}//fin de la clase
+
+
