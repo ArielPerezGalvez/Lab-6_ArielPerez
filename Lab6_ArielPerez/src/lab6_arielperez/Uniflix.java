@@ -614,10 +614,11 @@ public class Uniflix extends javax.swing.JFrame {
                 DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modeloU.getRoot();
                 DefaultListModel peli = (DefaultListModel) categoria.getModel();
                 DefaultListModel catego = (DefaultListModel) lista_peliculas.getModel();
-                
-                
-                registrar.setVisible(false);
+
+            } else {
+
             }
+            registrar.setVisible(false);
         } catch (Exception e) {
 
         }
