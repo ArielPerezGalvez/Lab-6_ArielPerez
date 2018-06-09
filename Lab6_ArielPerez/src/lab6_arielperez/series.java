@@ -12,23 +12,24 @@ import java.util.ArrayList;
  * @author ariel
  */
 public class series {
-    private String id;
+
+   private int id;
     private String nombre;
     private int temporadas;
     private String categoria;
-    ArrayList <String> idioma = new ArrayList();
-    ArrayList <String> sub = new ArrayList();
-    private double duracion;
+    private ArrayList idiomas = new ArrayList();
+    private ArrayList subs = new ArrayList();
+    private int duracion;
     private int rating;
-    ArrayList<String> comen = new ArrayList();
+    private ArrayList comentarios = new ArrayList();
     private String productora;
     private String director;
-    ArrayList <String> actores = new ArrayList();
+    private ArrayList actores = new ArrayList();
 
     public series() {
     }
 
-    public series(String id, String nombre, int temporadas, String categoria, double duracion, int rating, String productora, String director) {
+    public series(int id, String nombre, int temporadas, String categoria, int duracion, int rating, String productora, String director) {
         this.id = id;
         this.nombre = nombre;
         this.temporadas = temporadas;
@@ -39,11 +40,11 @@ public class series {
         this.director = director;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -71,27 +72,27 @@ public class series {
         this.categoria = categoria;
     }
 
-    public ArrayList<String> getIdioma() {
-        return idioma;
+    public ArrayList getIdiomas() {
+        return idiomas;
     }
 
-    public void setIdioma(ArrayList<String> idioma) {
-        this.idioma = idioma;
+    public void setIdiomas(ArrayList idiomas) {
+        this.idiomas = idiomas;
     }
 
-    public ArrayList<String> getSub() {
-        return sub;
+    public ArrayList getSubs() {
+        return subs;
     }
 
-    public void setSub(ArrayList<String> sub) {
-        this.sub = sub;
+    public void setSubs(ArrayList subs) {
+        this.subs = subs;
     }
 
-    public double getDuracion() {
+    public int getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(double duracion) {
+    public void setDuracion(int duracion) {
         this.duracion = duracion;
     }
 
@@ -103,12 +104,12 @@ public class series {
         this.rating = rating;
     }
 
-    public ArrayList<String> getComen() {
-        return comen;
+    public ArrayList getComentarios() {
+        return comentarios;
     }
 
-    public void setComen(ArrayList<String> comen) {
-        this.comen = comen;
+    public void setComentarios(ArrayList comentarios) {
+        this.comentarios = comentarios;
     }
 
     public String getProductora() {
@@ -127,21 +128,18 @@ public class series {
         this.director = director;
     }
 
-    public ArrayList<String> getActores() {
+    public ArrayList getActores() {
         return actores;
     }
 
-    public void setActores(ArrayList<String> actores) {
+    public void setActores(ArrayList actores) {
         this.actores = actores;
     }
 
     @Override
     public String toString() {
-        return nombre;
+        return "series{" + "id=" + id + ", nombre=" + nombre + ", temporadas=" + temporadas + ", categoria=" + categoria + ", idiomas=" + idiomas + ", subs=" + subs + ", duracion=" + duracion + ", rating=" + rating + ", comentarios=" + comentarios + ", productora=" + productora + ", director=" + director + ", actores=" + actores + '}';
     }
     
-    
-    
-    
-    
+
 }//fin de la clase

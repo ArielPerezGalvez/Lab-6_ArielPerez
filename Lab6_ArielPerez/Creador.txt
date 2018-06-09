@@ -1,0 +1,10 @@
+1,Coco,1,0,1,1,1,1
+1,Black panther,5,0,5,5,5,5
+1,Avenger Infinity war,1,2,1,1,1,1
+1,Rey leon,1,1,1,1,1,1
+,1,Death note,1,0,1,1,1,1
+1,1,Drabon ball super,1,0,1,1,1,1
+1,1,It,1,0,1,1,1,1
+1,1,Despertar de los muertos,1,0,1,1,1,1
+1,1,Conjuro,1,0,1,1,1,1
+1

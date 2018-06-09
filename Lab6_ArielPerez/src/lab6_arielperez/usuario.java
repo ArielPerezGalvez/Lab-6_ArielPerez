@@ -13,18 +13,21 @@ import java.util.Date;
  * @author ariel
  */
 public class usuario {
-    private String correo;
+ private String correo;
     private String contra;
-    private Date fecha;
-    ArrayList <Peliculas> lista = new ArrayList();
+    private int fecha;
+    private int tarjeta;
+    private ArrayList<Peliculas> pelis = new ArrayList();
+    private ArrayList<series> serie = new ArrayList();
 
     public usuario() {
     }
 
-    public usuario(String correo, String contra, Date fecha) {
+    public usuario(String correo, String contra, int fecha, int tarjeta) {
         this.correo = correo;
         this.contra = contra;
         this.fecha = fecha;
+        this.tarjeta = tarjeta;
     }
 
     public String getCorreo() {
@@ -43,25 +46,41 @@ public class usuario {
         this.contra = contra;
     }
 
-    public Date getFecha() {
+    public int getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(int fecha) {
         this.fecha = fecha;
     }
 
-    public ArrayList<Peliculas> getLista() {
-        return lista;
+    public int getTarjeta() {
+        return tarjeta;
     }
 
-    public void setLista(ArrayList<Peliculas> lista) {
-        this.lista = lista;
+    public void setTarjeta(int tarjeta) {
+        this.tarjeta = tarjeta;
+    }
+
+    public ArrayList<Peliculas> getPelis() {
+        return pelis;
+    }
+
+    public void setPelis(ArrayList<Peliculas> pelis) {
+        this.pelis = pelis;
+    }
+
+    public ArrayList<series> getSerie() {
+        return serie;
+    }
+
+    public void setSerie(ArrayList<series> serie) {
+        this.serie = serie;
     }
 
     @Override
     public String toString() {
-        return "usuario{" + "correo=" + correo + ", contra=" + contra + ", fecha=" + fecha + ", lista=" + lista + '}';
+        return "usuario{" + "correo=" + correo + ", contra=" + contra + ", fecha=" + fecha + ", tarjeta=" + tarjeta + ", pelis=" + pelis + ", serie=" + serie + '}';
     }
     
     
