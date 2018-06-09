@@ -100,10 +100,10 @@ public class Uniflix extends javax.swing.JFrame {
         jl_model1 = new javax.swing.JList<>();
         jButton4 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
-        jButton7 = new javax.swing.JButton();
+        arboleda = new javax.swing.JTree();
         crear_peli = new javax.swing.JDialog();
         jPanel7 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -161,9 +161,11 @@ public class Uniflix extends javax.swing.JFrame {
         menu = new javax.swing.JPopupMenu();
         modificar = new javax.swing.JMenuItem();
         Eliminar = new javax.swing.JMenuItem();
+        agregar = new javax.swing.JMenuItem();
         menu1 = new javax.swing.JPopupMenu();
         b = new javax.swing.JMenuItem();
         c = new javax.swing.JMenuItem();
+        d = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -338,8 +340,18 @@ public class Uniflix extends javax.swing.JFrame {
             .addGap(0, 365, Short.MAX_VALUE)
         );
 
+        jl_model.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_modelMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jl_model);
 
+        jl_model1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_model1MouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(jl_model1);
 
         jButton4.setText("Favoritas");
@@ -356,6 +368,13 @@ public class Uniflix extends javax.swing.JFrame {
             }
         });
 
+        jButton5.setText("LLevar al arbol");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -366,11 +385,13 @@ public class Uniflix extends javax.swing.JFrame {
                         .addGap(19, 19, 19)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(57, 57, 57)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addComponent(jButton4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(33, 33, 33)
+                        .addComponent(jButton5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                         .addComponent(jButton6)))
                 .addGap(50, 50, 50))
         );
@@ -384,15 +405,16 @@ public class Uniflix extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4)
-                    .addComponent(jButton6))
+                    .addComponent(jButton6)
+                    .addComponent(jButton5))
                 .addGap(25, 25, 25))
         );
 
         jTabbedPane2.addTab("favoritas", jPanel3);
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Contenido");
-        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane4.setViewportView(jTree1);
+        arboleda.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane4.setViewportView(arboleda);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -413,21 +435,14 @@ public class Uniflix extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Arbol", jPanel4);
 
-        jButton7.setText("Llevar al arbol");
-
         javax.swing.GroupLayout mostrarLayout = new javax.swing.GroupLayout(mostrar.getContentPane());
         mostrar.getContentPane().setLayout(mostrarLayout);
         mostrarLayout.setHorizontalGroup(
             mostrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mostrarLayout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(mostrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(mostrarLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(mostrarLayout.createSequentialGroup()
-                        .addGap(173, 173, 173)
-                        .addComponent(jButton7)))
+                .addGap(18, 18, 18)
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(35, Short.MAX_VALUE))
         );
         mostrarLayout.setVerticalGroup(
@@ -436,8 +451,6 @@ public class Uniflix extends javax.swing.JFrame {
             .addGroup(mostrarLayout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton7)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -868,6 +881,14 @@ public class Uniflix extends javax.swing.JFrame {
         });
         menu.add(Eliminar);
 
+        agregar.setText("Agregar");
+        agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarActionPerformed(evt);
+            }
+        });
+        menu.add(agregar);
+
         b.setText("Modificar");
         b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -883,6 +904,14 @@ public class Uniflix extends javax.swing.JFrame {
             }
         });
         menu1.add(c);
+
+        d.setText("Agregar");
+        d.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dActionPerformed(evt);
+            }
+        });
+        menu1.add(d);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1207,12 +1236,96 @@ public class Uniflix extends javax.swing.JFrame {
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
         // TODO add your handling code here:
-        DefaultListModel mSeries = (DefaultListModel) jl_model1.getModel();
-        for (int i = 0; i < seriess.size(); i++) {
-            mSeries.addElement(seriess.get(i));
+        try {
+            DefaultListModel mSeries = (DefaultListModel) jl_model1.getModel();
+            for (int i = 0; i < seriess.size(); i++) {
+                mSeries.addElement(seriess.get(i));
+            }
+            jl_model1.setModel(mSeries);
+        } catch (Exception e) {
+
         }
-        jl_model1.setModel(mSeries);
     }//GEN-LAST:event_jButton6MouseClicked
+
+    private void jl_modelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_modelMouseClicked
+        if (evt.isMetaDown()) {
+            menu.show(evt.getComponent(), evt.getX(), evt.getY());
+        }
+
+    }//GEN-LAST:event_jl_modelMouseClicked
+
+    private void jl_model1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_model1MouseClicked
+        // TODO add your handling code here:
+        if (evt.isMetaDown()) {
+            menu1.show(evt.getComponent(), evt.getX(), evt.getY());
+        }
+    }//GEN-LAST:event_jl_model1MouseClicked
+
+    private void agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarActionPerformed
+        // TODO add your handling code here:
+        DefaultListModel modeloPeliculas = (DefaultListModel) jl_model.getModel();
+        String nueva = JOptionPane.showInputDialog("Ingrese nueva nombre");
+        peliculass.add(nueva);
+        modeloPeliculas.addElement(nueva);
+        jl_model.setModel(modeloPeliculas);
+    }//GEN-LAST:event_agregarActionPerformed
+
+    private void dActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dActionPerformed
+        // TODO add your handling code here:
+        DefaultListModel modeloPeliculas = (DefaultListModel) jl_model1.getModel();
+        String nueva = JOptionPane.showInputDialog("Ingrese nuevo nombre");
+        seriess.add(nueva);
+        modeloPeliculas.addElement(nueva);
+        jl_model1.setModel(modeloPeliculas);
+    }//GEN-LAST:event_dActionPerformed
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+        if (jl_model.getSelectedIndex() >= 0 || jl_model1.getSelectedIndex() >= 0) {
+            DefaultMutableTreeNode nod = null;
+            DefaultTreeModel mFavoritos = (DefaultTreeModel) arboleda.getModel();
+            DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) mFavoritos.getRoot();
+            DefaultListModel mSeries = (DefaultListModel) jl_model1.getModel();
+            DefaultListModel mPeliculas = (DefaultListModel) jl_model.getModel();
+
+            String cat = ((Peliculas) peliculass.get(jl_model.getSelectedIndex())).getCategoria();
+            String nombre = ((Peliculas) peliculass.get(jl_model.getSelectedIndex())).getNombre();
+            String nombre1 = ((series) seriess.get(jl_model1.getSelectedIndex())).getNombre();
+            nod = new DefaultMutableTreeNode(cat);
+            String catS = ((series) seriess.get(jl_model1.getSelectedIndex())).getCategoria();
+            nod = new DefaultMutableTreeNode(catS);
+            Peliculas m = (Peliculas) mPeliculas.get(jl_model.getSelectedIndex());
+            //Series c = (Series) modeloSeries.get(jl_series.getSelectedIndex());
+            int centinela = -1;
+            for (int i = 0; i < raiz.getChildCount(); i++) {
+                if (raiz.getChildAt(i).toString().equals(m.toString())) {
+
+                    DefaultMutableTreeNode p = new DefaultMutableTreeNode(cat);
+                    ((DefaultMutableTreeNode) raiz.getChildAt(i)).add(p);
+                    centinela = 1;
+
+                }
+            }
+            if (centinela == -1) {
+                DefaultMutableTreeNode a = new DefaultMutableTreeNode(catS);
+                DefaultMutableTreeNode b = new DefaultMutableTreeNode(nombre1);
+                DefaultMutableTreeNode n = new DefaultMutableTreeNode(cat);
+                DefaultMutableTreeNode p = new DefaultMutableTreeNode(nombre);
+                a.add(b);
+                n.add(p);
+                raiz.add(n);
+                raiz.add(a);
+                try {
+                    Favoritos();
+                } catch (IOException ex) {
+                    Logger.getLogger(Uniflix.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            mFavoritos.reload();
+        }
+
+
+    }//GEN-LAST:event_jButton5MouseClicked
     void Favoritos() throws IOException {
         File archivo = null;
         FileWriter fw = null;
@@ -1289,6 +1402,8 @@ public class Uniflix extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Eliminar;
     private javax.swing.JTextField actors;
+    private javax.swing.JMenuItem agregar;
+    private javax.swing.JTree arboleda;
     private javax.swing.JMenuItem b;
     private javax.swing.JButton btncrear;
     private javax.swing.JMenuItem c;
@@ -1298,6 +1413,7 @@ public class Uniflix extends javax.swing.JFrame {
     private javax.swing.JTextField correo;
     private javax.swing.JDialog crear_peli;
     private javax.swing.JDialog crear_serie;
+    private javax.swing.JMenuItem d;
     private javax.swing.JTextField directors;
     private javax.swing.JTextField duracions;
     private javax.swing.JTextField idS;
@@ -1305,8 +1421,8 @@ public class Uniflix extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -1370,7 +1486,6 @@ public class Uniflix extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
-    private javax.swing.JTree jTree1;
     private javax.swing.JList<String> jl_model;
     private javax.swing.JList<String> jl_model1;
     private javax.swing.JPopupMenu menu;
@@ -1400,8 +1515,8 @@ public class Uniflix extends javax.swing.JFrame {
     usuario UsuarioGlobal = new usuario();
     ArrayList<String> p = new ArrayList();
     ArrayList<String> s = new ArrayList(9);*/
-    String s1 = "Dragon ball", s2 = "Death note", s3 = "Durarara", s4 = "One punch man", s5 = "Claymore", s6 = "Code geass", s7 = "Nanatzu no taizai", s8 = "Dragon ball super", s9 = "Another", s10 = "Black mirror";
-    String p1 = "Black panther", p2 = "Avenger Infinity war", p3 = "Capitan America", p4 = "Death note", p5 = "Insidious", p6 = "Up", p7 = "It", p8 = "Dragon ball ", p9 = "Iron Man", p10 = "Hulk";
+    //tring s1 = "Dragon ball", s2 = "Death note", s3 = "Durarara", s4 = "One punch man", s5 = "Claymore", s6 = "Code geass", s7 = "Nanatzu no taizai", s8 = "Dragon ball super", s9 = "Another", s10 = "Black mirror";
+    // String p1 = "Black panther", p2 = "Avenger Infinity war", p3 = "Capitan America", p4 = "Death note", p5 = "Insidious", p6 = "Up", p7 = "It", p8 = "Dragon ball ", p9 = "Iron Man", p10 = "Hulk";
     //Peliculas PeliculaGlobal;
     ArrayList peliculass = new ArrayList();
     ArrayList seriess = new ArrayList();
