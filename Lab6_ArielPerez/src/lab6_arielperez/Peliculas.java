@@ -1,18 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package lab6_arielperez;
 
 import java.util.ArrayList;
-
-/**
- *
- * @author ariel
- */
+import java.util.Random;
 public class Peliculas {
-
+    Random ran = new Random();
     private String id;
     private String nombre;
     private String categoria;
@@ -87,6 +79,7 @@ public class Peliculas {
     }
 
     public int getRating() {
+        rating = 1+ran.nextInt(5);
         return rating;
     }
 
