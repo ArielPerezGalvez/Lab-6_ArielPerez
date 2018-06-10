@@ -1124,7 +1124,6 @@ public class Uniflix extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void btncrearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btncrearMouseClicked
-        // int id, String Nombre, int N_Temporadas, int Categoria, int Duracion, int Rating, String Productora, String Director
         /* try {
             try {
                 DefaultListModel modelo = (DefaultListModel) jl_model1.getModel();
@@ -1225,6 +1224,16 @@ public class Uniflix extends javax.swing.JFrame {
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         // TODO add your handling code here:
         try {
+            seriess.add(new series(2, "Black Mirror", 4, "Accion", 1, 5, "Toei animation", "Will smith"));
+            seriess.add(new series(3, "13 reasons why", 2, "Accion", 2, 3, "Toei animation", "Will smith"));
+            seriess.add(new series(4, "Code geass", 5, "Accion", 3, 4, "Toei animation", "Will smith"));
+            seriess.add(new series(5, "DUrarara", 6, "Accion", 3, 4, "Toei animation", "Will smith"));
+            seriess.add(new series(6, "One punch man", 7, "Comedia", 2, 3, "Toei animation", "Will smith"));
+            seriess.add(new series(7, "Tabell", 8, "Comedia", 1, 2, "Toei animation", "Will smith"));
+            seriess.add(new series(8, "Bob esponja", 9, "Romance", 1, 5, "Toei animation", "Will smith"));
+            seriess.add(new series(9, "Dragon ball super", 1, "Accion", 2, 5, "Toei animation", "Will smith"));
+            seriess.add(new series(10, "Dragon ball z kai", 11, "Romance", 3, 3, "Toei animation", "Will smith"));
+            seriess.add(new series(11, "Como entrenar a tu dragon", 82, "Terror", 1, 1, "Toei animation", "Will smith"));
             DefaultListModel mPeliculas = (DefaultListModel) jl_model.getModel();
             for (int i = 0; i < peliculass.size(); i++) {
                 mPeliculas.addElement(peliculass.get(i));
@@ -1236,7 +1245,18 @@ public class Uniflix extends javax.swing.JFrame {
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
         // TODO add your handling code here:
+
         try {
+            peliculass.add(new Peliculas(1, "Avengers", "Accion", 32, 5, "Toei animation", "Brad pitt"));
+            peliculass.add(new Peliculas(2, "Hulk", "Accion", 12, 4, "Toei animation", "Brad pitt"));
+            peliculass.add(new Peliculas(3, "It", "Accion", 2, 4, "Toei animation", "Brad pitt "));
+            peliculass.add(new Peliculas(4, "America is ours", "Accion", 3, 3, "Toei animation", "Brad pitt"));
+            peliculass.add(new Peliculas(5, "This is america", "Comedia", 3, 5, "Toei animation", "Brad pitt"));
+            peliculass.add(new Peliculas(6, "Aviomes", "Comedia", 2, 4, "Toei animation", "Brad pitt"));
+            peliculass.add(new Peliculas(7, "Dragon ball super", "Comedia", 1, 5, "Toei animation", "Brad pitt"));
+            peliculass.add(new Peliculas(8, "rey leon", "Terror", 2, 3, "Toei animation", "Brad pitt"));
+            peliculass.add(new Peliculas(9, "Death note", "Romance", 1, 2, "Toei animation", "Brad pitt"));
+            peliculass.add(new Peliculas(10, "One more time", "Romance", 3, 4, "Toei animation", "Brad pitt"));
             DefaultListModel mSeries = (DefaultListModel) jl_model1.getModel();
             for (int i = 0; i < seriess.size(); i++) {
                 mSeries.addElement(seriess.get(i));
@@ -1248,82 +1268,97 @@ public class Uniflix extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void jl_modelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_modelMouseClicked
-        if (evt.isMetaDown()) {
-            menu.show(evt.getComponent(), evt.getX(), evt.getY());
+        try {
+            if (evt.isMetaDown()) {
+                menu.show(evt.getComponent(), evt.getX(), evt.getY());
+            }
+        } catch (Exception e) {
+
         }
 
     }//GEN-LAST:event_jl_modelMouseClicked
 
     private void jl_model1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_model1MouseClicked
         // TODO add your handling code here:
-        if (evt.isMetaDown()) {
-            menu1.show(evt.getComponent(), evt.getX(), evt.getY());
+        try {
+            if (evt.isMetaDown()) {
+                menu1.show(evt.getComponent(), evt.getX(), evt.getY());
+            }
+        } catch (Exception e) {
+
         }
     }//GEN-LAST:event_jl_model1MouseClicked
 
     private void agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarActionPerformed
         // TODO add your handling code here:
-        DefaultListModel modeloPeliculas = (DefaultListModel) jl_model.getModel();
-        String nueva = JOptionPane.showInputDialog("Ingrese nueva nombre");
-        peliculass.add(nueva);
-        modeloPeliculas.addElement(nueva);
-        jl_model.setModel(modeloPeliculas);
+        try {
+            DefaultListModel modeloPeliculas = (DefaultListModel) jl_model.getModel();
+            String nueva = JOptionPane.showInputDialog("Ingrese nueva nombre");
+            peliculass.add(nueva);
+            modeloPeliculas.addElement(nueva);
+            jl_model.setModel(modeloPeliculas);
+        } catch (Exception e) {
+
+        }
     }//GEN-LAST:event_agregarActionPerformed
 
     private void dActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dActionPerformed
         // TODO add your handling code here:
-        DefaultListModel modeloPeliculas = (DefaultListModel) jl_model1.getModel();
-        String nueva = JOptionPane.showInputDialog("Ingrese nuevo nombre");
-        seriess.add(nueva);
-        modeloPeliculas.addElement(nueva);
-        jl_model1.setModel(modeloPeliculas);
+        try {
+            DefaultListModel modeloPeliculas = (DefaultListModel) jl_model1.getModel();
+            String nueva = JOptionPane.showInputDialog("Ingrese nuevo nombre");
+            seriess.add(nueva);
+            modeloPeliculas.addElement(nueva);
+            jl_model1.setModel(modeloPeliculas);
+        } catch (Exception e) {
+
+        }
     }//GEN-LAST:event_dActionPerformed
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
         // TODO add your handling code here:
-        if (jl_model.getSelectedIndex() >= 0 || jl_model1.getSelectedIndex() >= 0) {
-            DefaultMutableTreeNode nod = null;
-            DefaultTreeModel mFavoritos = (DefaultTreeModel) arboleda.getModel();
-            DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) mFavoritos.getRoot();
-            DefaultListModel mSeries = (DefaultListModel) jl_model1.getModel();
-            DefaultListModel mPeliculas = (DefaultListModel) jl_model.getModel();
+        try {
+            if (jl_model.getSelectedIndex() >= 0 || jl_model1.getSelectedIndex() >= 0) {
+                DefaultMutableTreeNode nod = null;
+                DefaultTreeModel mFavoritos = (DefaultTreeModel) arboleda.getModel();
+                DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) mFavoritos.getRoot();
+                DefaultListModel mSeries = (DefaultListModel) jl_model1.getModel();
+                DefaultListModel mPeliculas = (DefaultListModel) jl_model.getModel();
 
-            String cat = ((Peliculas) peliculass.get(jl_model.getSelectedIndex())).getCategoria();
-            String nombre = ((Peliculas) peliculass.get(jl_model.getSelectedIndex())).getNombre();
-            String nombre1 = ((series) seriess.get(jl_model1.getSelectedIndex())).getNombre();
-            nod = new DefaultMutableTreeNode(cat);
-            String catS = ((series) seriess.get(jl_model1.getSelectedIndex())).getCategoria();
-            nod = new DefaultMutableTreeNode(catS);
-            Peliculas m = (Peliculas) mPeliculas.get(jl_model.getSelectedIndex());
-            //Series c = (Series) modeloSeries.get(jl_series.getSelectedIndex());
-            int centinela = -1;
-            for (int i = 0; i < raiz.getChildCount(); i++) {
-                if (raiz.getChildAt(i).toString().equals(m.toString())) {
-
-                    DefaultMutableTreeNode p = new DefaultMutableTreeNode(cat);
-                    ((DefaultMutableTreeNode) raiz.getChildAt(i)).add(p);
-                    centinela = 1;
-
+                String cat = ((Peliculas) peliculass.get(jl_model.getSelectedIndex())).getCategoria();
+                String nombre = ((Peliculas) peliculass.get(jl_model.getSelectedIndex())).getNombre();
+                String nombre1 = ((series) seriess.get(jl_model1.getSelectedIndex())).getNombre();
+                nod = new DefaultMutableTreeNode(cat);
+                String catS = ((series) seriess.get(jl_model1.getSelectedIndex())).getCategoria();
+                nod = new DefaultMutableTreeNode(catS);
+                Peliculas m = (Peliculas) mPeliculas.get(jl_model.getSelectedIndex());
+                int centinela = -1;
+                for (int i = 0; i < raiz.getChildCount(); i++) {
+                    if (raiz.getChildAt(i).toString().equals(m.toString())) {
+                        DefaultMutableTreeNode p = new DefaultMutableTreeNode(cat);
+                        ((DefaultMutableTreeNode) raiz.getChildAt(i)).add(p);
+                        centinela = 1;
+                    }
                 }
-            }
-            if (centinela == -1) {
-                DefaultMutableTreeNode a = new DefaultMutableTreeNode(catS);
-                DefaultMutableTreeNode b = new DefaultMutableTreeNode(nombre1);
-                DefaultMutableTreeNode n = new DefaultMutableTreeNode(cat);
-                DefaultMutableTreeNode p = new DefaultMutableTreeNode(nombre);
-                a.add(b);
-                n.add(p);
-                raiz.add(n);
-                raiz.add(a);
-                try {
-                    Favoritos();
-                } catch (IOException ex) {
-                    Logger.getLogger(Uniflix.class.getName()).log(Level.SEVERE, null, ex);
+                if (centinela == -1) {
+                    DefaultMutableTreeNode a = new DefaultMutableTreeNode(catS);
+                    DefaultMutableTreeNode b = new DefaultMutableTreeNode(nombre1);
+                    DefaultMutableTreeNode na = new DefaultMutableTreeNode(cat);
+                    DefaultMutableTreeNode p = new DefaultMutableTreeNode(nombre);
+                    a.add(b);
+                    na.add(p);
+                    raiz.add(na);
+                    raiz.add(a);
+                    try {
+                        Favoritos();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Uniflix.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
+                mFavoritos.reload();
             }
-            mFavoritos.reload();
+        } catch (Exception e) {
         }
-
 
     }//GEN-LAST:event_jButton5MouseClicked
     void Favoritos() throws IOException {
@@ -1520,5 +1555,6 @@ public class Uniflix extends javax.swing.JFrame {
     //Peliculas PeliculaGlobal;
     ArrayList peliculass = new ArrayList();
     ArrayList seriess = new ArrayList();
+
     // series SerieGlobal;
 }

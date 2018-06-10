@@ -138,7 +138,7 @@ public class series {
 
     @Override
     public String toString() {
-        return "series{" + "id=" + id + ", nombre=" + nombre + ", temporadas=" + temporadas + ", categoria=" + categoria + ", idiomas=" + idiomas + ", subs=" + subs + ", duracion=" + duracion + ", rating=" + rating + ", comentarios=" + comentarios + ", productora=" + productora + ", director=" + director + ", actores=" + actores + '}';
+        return nombre;
     }
     
 
